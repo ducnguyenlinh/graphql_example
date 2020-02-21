@@ -1,24 +1,47 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 設定
+- Install gem
+```
+$ bundle install --path=vendor/bundle
+```
 
-Things you may want to cover:
+- Create database
+```
+$ bundle exec rails db:migrate
+```
 
-* Ruby version
+- Seed data
+```
+$ bundle exec rails db:seed
+```
 
-* System dependencies
+## サーバー起動
+```
+$ bundle exec rails s
+```
+アクセス: http://localhost:3000/graphiql
 
-* Configuration
+## テスト
+Example:
+```
+query {
+  comments {
+    id
+    user {
+      id
+      name
+    }
+  }
+}
+```
 
-* Database creation
+## 参考URL
+- graphql-ruby
+https://github.com/rmosolgo/graphql-ruby
 
-* Database initialization
+- graphql-rails
+https://github.com/rmosolgo/graphiql-rails
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- guides
+https://graphql-ruby.org/guides
