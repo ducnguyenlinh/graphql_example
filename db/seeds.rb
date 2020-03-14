@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 10.times do
-  user = User.create(name: Faker::JapaneseMedia::DragonBall.character)
+  user = User.create(name: Faker::Name.name, email: Faker::Internet.email)
   post = Post.create(user: user, subject:Faker::Lorem.sentence , body: Faker::Quote.matz)
   Comment.create(user: user, post: post, body: Faker::Quote.matz)
 end
